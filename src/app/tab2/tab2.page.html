@@ -1,17 +1,69 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-content [fullscreen]="true">
+  
+    <ion-header>
+      <ion-toolbar color="dark">
+        <ion-title class="ion-text-center">BAC Calculator</ion-title>
+      </ion-toolbar>
+      <ion-text class="ion-text-center">
+        <h4>Alcohol Intake</h4>
+      </ion-text>
+    </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+    <ion-list>
+      <ion-item class="ion-padding-horizontal">
+        <ion-avatar slot="start">
+          <img src="..\assets\beer.png">
+        </ion-avatar>
+        <ion-label>Beer</ion-label>
+        <ion-input [(ngModel)]="myService.beers" slot="end" type="number" class="ion-class-right" min=0 id="totalBeer"></ion-input>
+        <ion-button (click)="myService.addBeer()" slot="end" color="dark"><ion-icon name="add"></ion-icon></ion-button>
+
+      </ion-item>
+      <ion-item class="ion-padding-horizontal">
+        <ion-avatar slot="start">
+          <img src="..\assets\wine.jpg">
+        </ion-avatar>
+        <ion-label>Wine</ion-label>
+        <ion-input [(ngModel)]="myService.wines" slot="end" type="number" class="ion-class-right" min=0 id="totalWine"></ion-input>
+        <ion-button (click)="myService.addWine()" slot="end" color="dark"><ion-icon name="add"></ion-icon></ion-button>
+
+         </ion-item>
+
+      <ion-item class="ion-padding-horizontal">
+        <ion-avatar slot="start">
+          <img src="..\assets\shot.jpg">
+        </ion-avatar>
+        <ion-label>Shot</ion-label>
+        <ion-input [(ngModel)]="myService.shots" slot="end" type="number" class="ion-class-right" min=0 id="totalWine"></ion-input>
+        <ion-button (click)="myService.addShot()" slot="end" color="dark"><ion-icon name="add"></ion-icon></ion-button>
+
+      </ion-item>
+
+      <ion-item class="ion-padding-horizontal">
+        <ion-avatar slot="start">
+          <img src="..\assets\mixdrink.jpg">
+        </ion-avatar>
+        <ion-label>Cocktail</ion-label>
+        <ion-input [(ngModel)]="myService.cocktails" slot="end" type="number" class="ion-class-right" min=0 id="totalWine"></ion-input>
+        <ion-button (click)="myService.addCocktail()" slot="end" color="dark"><ion-icon name="add"></ion-icon></ion-button>
+        </ion-item>
+
+        <ion-item class="ion-padding">
+
+          <ion-label>Hours Drinking</ion-label>
+          <ion-input [(ngModel)]="myService.hours" slot="end" type="number" class="ion-text-right" min=0 id="totalWine"></ion-input>
+
+          </ion-item>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col></ion-col><ion-col><ion-button size= "medium" color="danger" (click)="myService.reset()">Reset</ion-button>
+            <ion-button size= "medium" color="dark" [routerLink]="['/tabs/tab3']">Done</ion-button></ion-col>
+        </ion-row>
+      </ion-grid>  
+     
+
+    </ion-list>
+
+  </ion-content>

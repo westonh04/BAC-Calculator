@@ -1,17 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-content [fullscreen]="true">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
-</ion-content>
+    <ion-header>
+      <ion-toolbar color="dark">
+        <ion-title class="ion-text-center">BAC Calculator</ion-title>
+      </ion-toolbar>
+      <ion-text class="ion-text-center">
+        <h4>Blood Alchol Content</h4>
+      </ion-text>
+    </ion-header>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle class="ion-text-center">Estimated Values Only</ion-card-subtitle>
+        <ion-card-title class ="ion-text-center" color="success"><br>**{{myService.bacPercent}}%</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <div>{{myService.result}}</div><br><br>
+        **This application does not give confirmed results. This is
+         only an estimate that is calculated using data from trusted
+          sources based on your gender, age, and weight. This application
+           does not ever emply that you should opporate a vehicle under
+            the influence of alcohol. 
+      </ion-card-content>
+
+   </ion-card>
+
+    <ion-footer>
+      
+      <div class="logo" (click)="geoService.uberClick()"><img src="..\assets\uber\50px.png" id="uberLogo"> 
+        <div class="center">Ride With Uber</div>
+      </div>
+
+        <!--p>Lat: {{geoService.lat}}  Lon: {{geoService.lon}}</p-->
+       <!--ion-button (click)="geoService.whereAmI()" >Where am I?</ion-button-->
+      
+    </ion-footer>
+    

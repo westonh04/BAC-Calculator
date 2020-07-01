@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { BacCalcService } from '../services/bac-calc.service';
+import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +12,19 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  items: Observable<any[]>;
+  
+  constructor(
+    public myService: BacCalcService,
+    public navController: NavController,
+    public router:Router,
+    public db: AngularFireDatabase
+    ) {
+
+      this.items = db.list('list').valueChanges();
+    }
+  
+
 
 }
+

@@ -1,5 +1,8 @@
 {
   "name": "bac-calc",
-  "integrations": {},
-  "type": "angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "e2bd813c"
 }
