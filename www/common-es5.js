@@ -599,7 +599,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.timeDecrease = 0;
         this.hours = 0;
         this.bacPercent = 0;
-      }
+      } //increase drinks
+
 
       _createClass(BacCalcService, [{
         key: "addBeer",
@@ -625,7 +626,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         key: "addhour",
         value: function addhour() {
           this.hours += 1;
-        }
+        } //clear tab 2 inputs
+
       }, {
         key: "reset",
         value: function reset() {
@@ -635,7 +637,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           this.cocktails = 0;
           this.drinks = 0;
           this.hours = 0;
-        }
+        } //function to calcualate BAC on tab 3 using known values from research
+
       }, {
         key: "bac",
         value: function bac() {
@@ -775,13 +778,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             if (this.weight > 250) {
               this.weightDrink = 0.018;
             }
-          }
+          } //round to 2 decimals
+
 
           this.bacPercent = this.weightDrink * this.drinks;
           this.timeDecrease = 0.015 * this.hours;
 
           if (this.bacPercent >= 0.015) {
-            this.bacPercent -= this.timeDecrease; //round to 2 decimals
+            this.bacPercent -= this.timeDecrease; //returns the description of the effects on the body
 
             if (this.bacPercent < 0.02) {
               this.result = "You should feel no difference at this level.";
@@ -821,7 +825,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           } else {
             this.result = "	Onset of coma, possible death due to respiratory arrest.";
           }
-        }
+        } //corrects a small issue with gender changing when it's not supposed to
+
       }, {
         key: "save",
         value: function save() {

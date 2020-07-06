@@ -21,7 +21,8 @@
                 type="text"
                 class="ion-text-right"
                 required="true"
-                formControlName="name">
+                formControlName="name"
+                >
                 </ion-input>
           </ion-item>
       </ion-list>
@@ -74,7 +75,7 @@
         <ion-col></ion-col>
         <ion-col>
 
-          <ion-button [disabled]="!createUserForm.valid" (click)="myService.save()" expand="block" color="dark" type="submit" [routerLink]="['/tabs/tab2']">Done</ion-button>
+          <ion-button [disabled]="!createUserForm.valid" (click)="myService.save()" expand="block" color="dark" type="submit">Done</ion-button>
         </ion-col>
       </ion-row>
 

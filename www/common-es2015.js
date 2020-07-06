@@ -388,6 +388,7 @@ let BacCalcService = class BacCalcService {
         this.hours = 0;
         this.bacPercent = 0;
     }
+    //increase drinks
     addBeer() {
         this.beers += 1;
     }
@@ -403,6 +404,7 @@ let BacCalcService = class BacCalcService {
     addhour() {
         this.hours += 1;
     }
+    //clear tab 2 inputs
     reset() {
         this.beers = 0;
         this.wines = 0;
@@ -411,6 +413,7 @@ let BacCalcService = class BacCalcService {
         this.drinks = 0;
         this.hours = 0;
     }
+    //function to calcualate BAC on tab 3 using known values from research
     bac() {
         this.drinks = this.shots + this.beers + this.wines + (this.cocktails * 1.5);
         if (this.saveGender = "m") {
@@ -516,11 +519,12 @@ let BacCalcService = class BacCalcService {
                 this.weightDrink = 0.018;
             }
         }
+        //round to 2 decimals
         this.bacPercent = this.weightDrink * this.drinks;
         this.timeDecrease = 0.015 * this.hours;
         if (this.bacPercent >= 0.015) {
             this.bacPercent -= this.timeDecrease;
-            //round to 2 decimals
+            //returns the description of the effects on the body
             if (this.bacPercent < 0.02) {
                 this.result = "You should feel no difference at this level.";
             }
@@ -553,6 +557,7 @@ let BacCalcService = class BacCalcService {
             this.result = "	Onset of coma, possible death due to respiratory arrest.";
         }
     }
+    //corrects a small issue with gender changing when it's not supposed to
     save() {
         this.saveGender = this.selectedGender;
     }

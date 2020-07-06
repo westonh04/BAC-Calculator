@@ -46,7 +46,8 @@ export class Tab1Page {
         .then(
           () => {
             loading.dismiss().then(() => {
-              this.router.navigateByUrl('');
+              //[routerLink]="['']"
+              this.router.navigateByUrl('/tabs/tab2');
             });
           },
           error => {

@@ -561,6 +561,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "./node_modules/@ionic-native/geolocation/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/__ivy_ngcc__/es2015/index.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/__ivy_ngcc__/firestore/es2015/index.js");
+/* harmony import */ var _credentials__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./credentials */ "./src/app/credentials.ts");
+
+
+
 
 
 
@@ -577,7 +583,13 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"]],
+        imports: [
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
+            angularfire2__WEBPACK_IMPORTED_MODULE_10__["AngularFireModule"].initializeApp(_credentials__WEBPACK_IMPORTED_MODULE_12__["firebaseConfig"]),
+            angularfire2_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestoreModule"],
+        ],
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
@@ -588,6 +600,30 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     })
 ], AppModule);
 
+
+
+/***/ }),
+
+/***/ "./src/app/credentials.ts":
+/*!********************************!*\
+  !*** ./src/app/credentials.ts ***!
+  \********************************/
+/*! exports provided: firebaseConfig */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "firebaseConfig", function() { return firebaseConfig; });
+var firebaseConfig = {
+    apiKey: "AIzaSyCLJvVT-p553tFrlK9K5aw9_xc0chqGKjg",
+    authDomain: "bac-calculator-756e4.firebaseapp.com",
+    databaseURL: "https://bac-calculator-756e4.firebaseio.com",
+    projectId: "bac-calculator-756e4",
+    storageBucket: "bac-calculator-756e4.appspot.com",
+    messagingSenderId: "717173125977",
+    appId: "1:717173125977:web:6f106f994763841a4d9248",
+    measurementId: "G-RCN5GNBBXC"
+};
 
 
 /***/ }),
@@ -606,7 +642,7 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false
+    production: false,
 };
 /*
  * For easier debugging in development mode, you can import the following file

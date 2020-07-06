@@ -68,7 +68,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         _classCallCheck(this, GeoLocationService);
 
         this.geolocation = geolocation;
-      }
+      } //returns lat and lon from geo sensor
+
 
       _createClass(GeoLocationService, [{
         key: "whereAmI",
@@ -83,7 +84,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             _this.lon = res.coords.longitude;
           })["catch"](function (e) {
             console.log(e);
-          });
+          }); //Uber webview link 
         }
       }, {
         key: "uberClick",
