@@ -10,15 +10,30 @@
     </ion-text>
   </ion-header>
     
-
+  <form [formGroup]="createUserForm" (submit)="createUser()">
   <ion-grid>
+    <ion-row class="ion-padding-top">
+      <ion-col>
+        <ion-list>  
+          <ion-item>
+            <ion-label>Name</ion-label>
+            <ion-input 
+                type="text"
+                class="ion-text-right"
+                required="true"
+                formControlName="name">
+                </ion-input>
+          </ion-item>
+      </ion-list>
+     </ion-col>
+    </ion-row>
       <ion-row>
        <ion-col>
 
         <ion-list>
           <ion-item>
             <ion-label>Gender</ion-label>
-            <ion-select placeholder="Select One" [(ngModel)]="myService.selectedGender">
+            <ion-select placeholder="Select One" [(ngModel)]="myService.selectedGender" formControlName="gender">
               <ion-select-option value="f">Female</ion-select-option>
               <ion-select-option value="m">Male</ion-select-option>
             </ion-select>
@@ -32,7 +47,7 @@
           <ion-list>  
             <ion-item>
               <ion-label>Birthday</ion-label>
-              <ion-datetime displayFormat="MM/DD/YYYY" min="1900-01-01" max="1999-01-01"></ion-datetime>
+              <ion-datetime displayFormat="MM/DD/YYYY" min="1900-01-01" max="1999-01-01" formControlName="birthday"></ion-datetime>
             </ion-item>
 
         </ion-list>
@@ -48,7 +63,8 @@
                   [(ngModel)]="myService.weight"
                   type="number"
                   class="ion-text-right"
-                  required="true">
+                  required="true"
+                  formControlName="weight">
                   </ion-input>
             </ion-item>
         </ion-list>
@@ -58,18 +74,16 @@
         <ion-col></ion-col>
         <ion-col>
 
-          <ion-button (click)="myService.save()" expand="block" color="dark" type="submit" [routerLink]="['/tabs/tab2']">Done</ion-button>
+          <ion-button [disabled]="!createUserForm.valid" (click)="myService.save()" expand="block" color="dark" type="submit" [routerLink]="['/tabs/tab2']">Done</ion-button>
         </ion-col>
       </ion-row>
-      <ion-row>
-        
-    <ion-card>
-      <ion-item *ngFor="let item of items | async">
-        {{item | json}}
-      </ion-item>
-    </ion-card>
-      </ion-row>
+
     </ion-grid>
+    </form>
+
+
+
+
 
 
 

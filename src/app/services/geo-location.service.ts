@@ -21,7 +21,7 @@ export class GeoLocationService {
    
 
   }
-
+  //returns lat and lon from geo sensor
   whereAmI(){
     this.geolocation.getCurrentPosition({
       timeout: 10000,
@@ -34,7 +34,7 @@ export class GeoLocationService {
     })
     
 
-
+  //Uber webview link 
   }
   uberClick(){
 

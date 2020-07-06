@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UberConnectService } from './uber-connect.service';
+import { FirestoreService } from './firestore.service';
 
-describe('UberConnectService', () => {
-  let service: UberConnectService;
+describe('FirestoreService', () => {
+  let service: FirestoreService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(UberConnectService);
+    service = TestBed.inject(FirestoreService);
   });
 
   it('should be created', () => {

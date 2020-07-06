@@ -11,15 +11,9 @@ import { AppComponent } from './app.component';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
-// Firebase services + enviorment module
-import { AngularFireModule } from "@angular/fire";
-import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { environment } from '../environments/environment';
-import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database'
-
-
-
+import { firebaseConfig } from './credentials';
 
 
 @NgModule({
@@ -29,16 +23,13 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/da
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
-    AngularFireDatabaseModule //imports firebase/database, only needed for database features
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
-    AngularFireDatabase,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
